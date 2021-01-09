@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -133,3 +134,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # login urls
 LOGIN_URL = 'login'
+
+django_heroku.settings(locals())
