@@ -1,0 +1,46 @@
+<!-- Modal Create Account -->
+<div class="modal fade" id="createAccountModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6 col-sm-10">
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="usernameText" 
+                                aria-describedby="usernameHelp" placeholder="input username">
+                            <label for="usernameText">Username*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="firstnameText" 
+                                aria-describedby="firstnameHelp" placeholder="input firstname">
+                            <label for="firstnameText">First Name*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="lastnameText" 
+                                aria-describedby="lastnameHelp" placeholder="input lastname">
+                            <label for="lastnameText">Last Name*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="passwordText"  placeholder="input password">
+                            <label for="passwordText">Password*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="passwordText"  placeholder="input password">
+                            <label for="passwordText">Re-type Password*</label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Singup</button>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

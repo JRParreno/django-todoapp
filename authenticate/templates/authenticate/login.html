@@ -1,0 +1,35 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row justify-content-center vh-100">
+    <div class="col-md-6 col-sm-9 my-auto">
+        <div class="card login-form">
+            <div class="card-header text-center">
+                <p class="fs-2">Login</p> 
+            </div>
+            <div class="card-body">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="usernameText" 
+                            aria-describedby="usernameHelp" placeholder="input username">
+                        <label for="usernameText">Username*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="passwordText"  placeholder="input password">
+                        <label for="passwordText">Password*</label>
+                    </div>
+                    <div class="mb-3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal">Don't have account?</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'authenticate/create_account_modal.html' %}
+{% endblock content %}
