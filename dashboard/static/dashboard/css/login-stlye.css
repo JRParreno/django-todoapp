@@ -11,7 +11,14 @@
 /* // No media query for `xs` since this is the default in Bootstrap */
 
  /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 320px) {
+@media (max-width: 320px) {
+    .activity-lottie {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
     .activity-lottie {
         width: 300px;
         height: 300px;
@@ -21,16 +28,26 @@
  /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .activity-lottie {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .activity-lottie {
         width: 500px;
         height: 500px;
     }
 }
 
-/* // Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
 /* // X-Large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) { ... } */
+@media (min-width: 1200px) {
+    .activity-lottie {
+        width: 500px;
+        height: 500px;
+    }
+}
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 /* @media (min-width: 1400px) { ... } */ */
