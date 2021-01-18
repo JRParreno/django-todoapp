@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'activity',
-    'authenticate',
+    'authenticate.apps.AuthenticateConfig',
     'dashboard',
     'crispy_forms',
     'crispy_forms_gds',
@@ -130,9 +130,11 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # login urls
+LOGIN_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
 django_heroku.settings(locals())

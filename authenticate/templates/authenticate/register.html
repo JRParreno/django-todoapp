@@ -1,0 +1,64 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-sm-9 col-lg-6 my-auto">
+        <div class="card login-form">
+            <div class="card-header text-center">
+                <p class="fs-2">Register</p> 
+            </div>
+            <div class="card-body">
+                <form action="{% url 'authenticate:register' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control {% if form.errors.username %}is-invalid {% endif %}" id="usernameText" 
+                            aria-describedby="usernameHelp" name="username" placeholder="input username" required>
+                        <label for="usernameText">Username*</label>
+                        <div class="invalid-feedback">
+                            Please enter your username.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstnameText" 
+                            aria-describedby="firstnameHelp" name="first_name" placeholder="input firstname"  required>
+                        <label for="firstnameText">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastnameText" 
+                            aria-describedby="lastnameHelp" name="last_name" placeholder="input lastname"  required>
+                        <label for="lastnameText">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control {% if form.errors.email %}is-invalid {% endif %}" id="emailText" 
+                            aria-describedby="emailHelp" name="email" placeholder="input email"  required>
+                        <label for="emailText">Email Address*</label>
+                        <div class="invalid-feedback">
+                            Please enter your email address.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control {% if form.errors.password1 %}is-invalid {% endif %}" 
+                            id="passwordText1"  name="password1" placeholder="input password" required>
+                        <label for="passwordText1">Password*</label>
+                        <div class="invalid-feedback">
+                            Password didn't match!
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control {% if form.errors.password2 %}is-invalid {% endif %}" 
+                            id="passwordText2" name="password2" placeholder="input password"  required>
+                        <label for="passwordText2">Re-type Password*</label>
+                        <div class="invalid-feedback">
+                            Please enter your confirmation password.
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Signup</button>
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
